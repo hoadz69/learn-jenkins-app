@@ -40,11 +40,11 @@ pipeline {
                             npm test
                         '''
                     }
-                    // post {
-                    //     always {
-                    //         // junit 'jest-results/junit.xml'
-                    //     }
-                    // }
+                    post {
+                        always {
+                            // junit 'jest-results/junit.xml'
+                        }
+                    }
                 }
 
                 stage('E2E') {
@@ -73,7 +73,7 @@ pipeline {
             }
         }
         stage('deploy'){
-            agent{
+            agent {
                 image 'note:18-alpine'
                 reuseNode true
             }
