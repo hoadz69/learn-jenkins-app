@@ -72,5 +72,17 @@ pipeline {
                 }
             }
         }
+        stage('deploy'){
+            agent{
+                image 'note:18-alpine'
+                reuseNode true
+            }
+            steps {
+                sh '''
+                    npm install netlify-cli -g
+                    netlify --version
+                '''
+            }
+        }
     }
 }
