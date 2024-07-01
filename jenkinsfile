@@ -86,7 +86,7 @@ pipeline {
             steps {
                 sh '''
                     ls
-                    mkdir
+                    pwd
                     npm install netlify-cli
                     node_modules/.bin/netlify --version
                     echo "site id : $netlify_site_id"
